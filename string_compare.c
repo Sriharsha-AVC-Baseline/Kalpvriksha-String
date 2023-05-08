@@ -3,18 +3,18 @@
 #include<stdlib.h>
 #include<string.h>
 
-compare(char *str1,char *str2)
+compare(char *string1,char *string2)
 {
-	if(strlen(str1)!=strlen(str2))
+	if(strlen(string1) != strlen(string2))
 	{
 		return 0;
 	}
 	else
 	{
-		int i=0,len=strlen(str1);
-		for(i=0;i<len-1;i++)
+		int iterator=0,length=strlen(string1);
+		for(iterator = 0; iterator<length-1 ;iterator++)
 		{
-			if(str1[i]!=str2[i])
+			if(string1[iterator]!=string2[iterator])
 			{
 				return 0;
 			}
@@ -26,12 +26,12 @@ compare(char *str1,char *str2)
 int main()
 {
 	puts("Enter the String 1");
-	char str1[200];
-	fgets(str1,200,stdin);
+	char string1[200];
+	fgets(string1,200,stdin);
 	puts("Enter the String 2");
-	char str2[200];
-	fgets(str2,200,stdin);
-	int result=compare(str1,str2);
+	char string2[200];
+	fgets(string2,200,stdin);
+	int result=compare(string1,string2);
 	if(result==1)
 	{
 		puts("Equal Strings");
