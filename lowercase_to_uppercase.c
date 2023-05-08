@@ -3,28 +3,28 @@
 #include<String.h>
 #include<stdlib.h>
 
-void viceverse(char* str)
+void viceverse(char* string)
 {
-    int length=strlen(str);
-    int i=0,j=0;
-    for(i=0;i<length-1;i++)
+    int length=strlen(string);
+    int iterator1=0,iterator2=0;
+    for(iterator1 = 0; iterator1 < length-1; iterator1++)
     {
-       if(str[i]>64&&str[i]<96)
+       if(string[iterator1] > 64 && string[iterator1] < 96)
        {
-        str[i]=str[i]+32;
+        string[iterator1] = string[iterator1] + 32;
        }
-       else if(str[i]>=96)
+       else if(string[iterator1] >= 96)
        {
-        str[i]=str[i]-32;
+        string[iterator1] = string[iterator1]-32;
        }
     }
-    printf("%s",str);
+    printf("%s",string);
 }
 
 int main()
 {
-    char str[200];
+    char string[200];
     printf("Enter the String\n");
-    fgets(str,100,stdin);
-    viceverse(str);
+    fgets(string,100,stdin);
+    viceverse(string);
 }
