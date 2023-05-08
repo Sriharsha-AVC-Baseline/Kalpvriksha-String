@@ -3,26 +3,30 @@
 #include<stdlib.h>
 #include<string.h>
 
-void sort(char* str)
+void sort(char* string)
 {
-    int number=0,i,j;
-    char temp;
-    int l=strlen(str);
-     for(i=1;i<l;i++)
-    for(j=0;j<l-i;j++)
-	if(str[j]>str[j+1])
+    int number=0,iterator1,iterator2;
+    char temporary;
+    int length=strlen(string);
+    for(iterator1 = 1; iterator1 < length; iterator1++)
 	{
-	  temp=str[j];
-	  str[j] = str[j+1];
-	  str[j+1]=temp;
+    for(iterator2 = 0; iterator2 < length-iterator1; iterator2++)
+    {
+	 if(string[iterator2]>string[iterator2+1])
+   	{
+	  temporary=string[iterator2];
+	  string[iterator2] = string[iterator2+1];
+	  string[iterator2+1]=temporary;
 	}
-    printf("%s ",str);
+}
+}
+    printf("%s ",string);
 }
 
 int main()
 {
     printf("Enter the String\n");
-    char str[200];
-    fgets(str,200,stdin);
-    sort(str);
+    char string[200];
+    fgets(string,200,stdin);
+    sort(string);
 }
