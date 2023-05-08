@@ -5,30 +5,30 @@
 
 void recognize(char *string)
 {
-	int len=strlen(string);
-	int type_int=0,i,temp;
+	int length=strlen(string);
+	int type_int=0,iterator,temp;
 	float type_float;
 	char type_char;
 	char type_string[200];
-	for(i=0;i<len-1;i++)
+	for(iterator=0;iterator<length-1;iterator++)
 	{
-		if(string[i]>=48 && string[i]<=57)
+		if(string[iterator]>=48 && string[iterator]<=57)
 		{
 			
-			while(string[i]>=48 && string[i]<=57)
+			while(string[iterator]>=48 && string[iterator]<=57)
 			{
-				temp=int(string[i]-48);
+				temp=int(string[iterator]-48);
 				type_int=type_int*10 + temp;
-				i++;
+				iterator++;
 			}
-			if(string[i]=='.')
+			if(string[iterator]=='.')
 			{
 				printf("\t%d.",type_int);
-				i++;
-				while(string[i]>=48 && string[i]<=57 &&i<len-1)
+			iterator++;
+				while(string[iterator]>=48 && string[iterator]<=57 &&iterator<length-1)
 				{
-					printf("%c",string[i]);
-					i++;
+					printf("%c",string[iterator]);
+					iterator++;
 				}
 				printf(" is an Float Data\n");
 			}
@@ -38,23 +38,23 @@ void recognize(char *string)
 	     	}
 	}	
 		
-		else if(string[i]==','||string[i]==' ')
+		else if(string[iterator]==','||string[iterator]==' ')
 		{
 			continue;
 		}
 		else
 		{
-			if(string[i+1]!=','||string[i+1]!=' '||string[i]!=NULL && i<len-1)
+			if(string[iterator+1]!=','||string[iterator+1]!=' '||string[iterator]!=NULL && iterator<length-1)
 			{
 				printf("\tString value is : ");
-				while(string[i]!=','&&string[i]!=' '&&i<len-1)
+				while(string[iterator]!=','&&string[iterator]!=' '&&iterator<length-1)
 				{
-					if(string[i]==' '||string[i]==',')
+					if(string[iterator]==' '||string[iterator]==',')
 					{
 						continue;
 					}
-					printf("%c",string[i]);
-					i++;
+					printf("%c",string[iterator]);
+					iterator++;
 				}
 				printf("\n");
 			}
@@ -67,7 +67,7 @@ int main()
 {
 	char line[200];
 	fgets(line,200,stdin);
-	int len = strlen(line);
-	line[len]=' '; 
+	int length = strlen(line);
+	line[length]=' '; 
 	recognize(line);
 }
