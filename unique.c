@@ -3,38 +3,38 @@
 #include<stdlib.h>
 #include<string.h>
 
-char unique(char* str)
+char unique(char* string)
 {
-    int number=0,i=0,j=0,k=1;
-    for(i=0;i<strlen(str)-1;i++)
+    int number=0,iterator1=0,iterator2=0,temporary=1;
+    for(iterator1=0;iterator1<strlen(string)-1;iterator1++)
     {
        
-       for(j=i+1;j<strlen(str)-1;j++)
+       for(iterator2=iterator1+1;iterator2<strlen(string)-1;iterator2++)
        {
-        if(str[i]==str[j] && str[i]!='0')
+        if(string[iterator1]==string[iterator2] && string[iterator1]!='0')
         {
-        	if(str[j]==' ')
+        	if(string[iterator2]==' ')
         	{
         		continue;
 			}
-           str[j]='0';
-           k++;
+           string[iterator2]='0';
+           temporary++;
         }
        }
-       if(str[i]=='0')
+       if(string[iterator1]=='0')
        {
-       	k=1;
+       	temporary=1;
        	continue;
 	   }
-       printf("%c",str[i]);
-       k=1;
+       printf("%c",string[iterator1]);
+       temporary=1;
     }
 }
 
 int main()
 {
     printf("Enter the String\n");
-    char str[200];
-    fgets(str,200,stdin);
-    unique(str);
+    char string[200];
+    fgets(string,200,stdin);
+    unique(string);
 }
