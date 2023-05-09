@@ -4,33 +4,33 @@
 #include<String.h>
 #include<stdlib.h>
 
-void camel_to_snake(char* str)
+void camel_to_snake(char* string)
 {
-    int length=strlen(str);
-    int i=0,j=0;
-    char nstr[200];
-    if(str[0]<96)
+    int length=strlen(string);
+    int iterator1=0,iterator2=0;
+    char NewString[200];
+    if(string[0]<96)
     {
-        str[0]=str[0]+32;
+        string[0]=string[0]+32;
     }
-    for(i=0;i<length-1;i++)
+    for(iterator1 = 0; iterator1 < length-1; iterator1++)
     {
-        if(str[i]<96)
+        if(string[iterator1]<96)
         {
-            nstr[j]='_';
-            j++;
-            str[i]=str[i]+32;
+            NewString[iterator2]='_';
+            iterator2++;
+            string[iterator1]=string[iterator1]+32;
         }
-        nstr[j]=str[i];
-        j++;
+        NewString[iterator2]=string[iterator1];
+        iterator2++;
     }
-    printf("%s",nstr);
+    printf("%s",NewString);
 }
 
 int main()
 {
-    char str[200];
+    char string[200];
     printf("Enter the CamelCase String\n");
-    fgets(str,100,stdin);
-    camel_to_snake(str);
+    fgets(string,100,stdin);
+    camel_to_snake(string);
 }
