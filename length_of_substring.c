@@ -5,47 +5,47 @@
 #include<stdlib.h>
 #include<string.h>
 
-void smallest(char* str)
+void smallest(char* string)
 {
-   int len=strlen(str);
-   int arr[20];
-   int i=0,j=0,k=0,l=0;
-   for(i=0;i<len-1;i++)
+   int length=strlen(string);
+   int array[20];
+   int iterator1=0,iterator2=0,new_word=0,length_of_word=0;
+   for(iterator1 = 0; iterator1 < length - 1; iterator1++)
    {
-    if(str[i]==' ')
+    if(string[iterator1]==' ')
     {
-        k++;
-        arr[j]=l;
+        new_word++;
+        array[iterator2]=length_of_word;
       //  printf("%d ",arr[j]);
-        j++;
-        l=0;
+        iterator2++;
+        length_of_word=0;
         continue;
     }
-    l++;
-    arr[j]=l;
+    length_of_word++;
+    array[iterator2]=length_of_word;
    }
-   int min=arr[0],max=arr[0];
-   for(i=0;i<=k;i++)
+   int minimum=array[0],maximum=array[0];
+   for(iterator1 = 0; iterator1 <= new_word; iterator1++)
    {
-    if(min>arr[i])
+    if(minimum>array[iterator1])
     {
-        min=arr[i];
+        minimum=array[iterator1];
     }
-    if(max<arr[i])
+    if(maximum<array[iterator1])
     {
-        max=arr[i];
+        maximum=array[iterator1];
     }
    }
-   printf("Minimum value is %d\n",min);
-   printf("Maximum value is %d\n",max);
+   printf("Minimum value is %d\n",minimum);
+   printf("Maximum value is %d\n",maximum);
 
 }
 
 int main()
 {
     printf("Enter the String\n");
-    char str[200];
-    fgets(str,200,stdin);
+    char string[200];
+    fgets(string,200,stdin);
     //printf("Enter the character for frequency\n");
-    smallest(str);
+    smallest(string);
 }
