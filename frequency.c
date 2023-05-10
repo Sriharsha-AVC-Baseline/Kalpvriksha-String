@@ -3,13 +3,13 @@
 #include<stdlib.h>
 #include<string.h>
 
-frequency(char* str,char* freq)
+frequency(char* string,char* frequency)
 {
-    int number=0,i=0;
-    for(i=0;i<strlen(str)-1;i++)
+    int number=0,iterator=0;
+    for(iterator=0;iterator<strlen(string)-1;iterator++)
     {
        // printf("%c",str[i]);
-        if(str[i]==freq)
+        if(string[iterator]==frequency)
         {
            /// printf("%c",str[i]);
             number++;
@@ -21,10 +21,10 @@ frequency(char* str,char* freq)
 int main()
 {
     printf("Enter the String\n");
-    char str[200];
-    fgets(str,200,stdin);
+    char string[200];
+    fgets(string,200,stdin);
     printf("Enter the character for frequency\n");
-    char freq;
-    scanf("%c",&freq);
-    printf("The frequency of word %c is %d\n",freq,frequency(str,freq));
+    char letter;
+    scanf("%c",&letter);
+    printf("The frequency of word %c is %d\n",letter,frequency(string,letter));
 }
